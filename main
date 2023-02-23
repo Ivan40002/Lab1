@@ -1,0 +1,13 @@
+#!/bin/bash
+
+check=20
+path="/home/vboxuser/1ext/LOG" #1ext - точка монтирования первого раздела для папки LOG
+#2ext - точка монтирования первого раздела для папки BACKUP
+
+size=`df -h $path --output=pcent | grep -o "[0-9]*"`
+if [ "$size" -ge "$check" ]
+then
+  tar -czf archive.tar.gz -C /home/vboxuser/1ext LOG
+  sudo mv archive.tar.gz /home/vboxuser/2ext/BACKUP/archive.tar.gz
+  sudo rm -f /home/vboxuser/1ext/LOG/*
+fi
