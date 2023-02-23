@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check=20
+check=70
 path="/home/vboxuser/1ext/LOG" #1ext - точка монтирования первого раздела для папки LOG
 #2ext - точка монтирования первого раздела для папки BACKUP
 
