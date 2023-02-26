@@ -2,7 +2,7 @@
 
 check=70
 path="/home/vboxuser/1ext/LOG" #1ext - точка монтирования первого раздела для папки LOG
-#2ext - точка монтирования первого раздела для папки BACKUP
+#2ext - точка монтирования второго раздела для папки BACKUP
 
 size=`df -h $path --output=pcent | grep -o "[0-9]*"`
 if [ "$size" -ge "$check" ]
